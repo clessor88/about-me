@@ -67,9 +67,45 @@ confirm('Are you ready to play?');
 	        console.log('incorrect');
 	      }
 	      qSixCounter++;
+	    	}
+	  		} else {
+	    	alert('That is not a valid number. Please try again.');
+	    	answer6;
+	  	}
+		}
+
+		var favorites = ['seafood', 'reading', 'traveling', 'painting', 'kitties'];
+		var favoritesCombined = favorites.join(', ');
+		var tries = 6;
+		var qSevenCounter = 1;
+		var isCorrect = false;
+
+		alert('For this last question, please type in a word for your answer.');
+
+		while (qSevenCounter <= tries) {
+	  var question7 = prompt('Name one of my favorite things.').toLowerCase();
+	  for (var i = 0; i < favorites.length; i++) {
+	    console.log(favorites[i]);
+	    if (question7 === favorites[i]) {
+	      alert('Correct. one of my favorite things is ' + question7 + '. here are some more favorites: ' + favoritesCombined);
+	      console.log(favoritesCombined);
+	      isCorrect = true;
+	      break;
+	    } else {
+	      console.log('current guess is not at ' + i + ' continuing to check');
+	    }
+	  }
+	  if (isCorrect === false) {
+	    alert('Incorrect. Please try again.');
+	    console.log('wrong, you have ' + (tries - qSevenCounter) + ' left.');
+	    qSevenCounter++;
+	    if (qSevenCounter === (tries + 1)) {
+	      alert('incorrect. Here is a list of some of my favorite things: ' + favoritesCombined);
+	      console.log('failsquad');
+	      break;
 	    }
 	  } else {
-	    alert('That is not a valid number. Please try again.');
-	    answer6;
+	    break;
 	  }
 	}
+		alert(userName + ', thank you for playing my game! enjoy my page!');
